@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import ToDoItems from "./ToDoItems";
+import InputArea from "./InputArea";
 
 function App() {
   //1. inputText almacenara el valor de lo que se escribe en el input
@@ -36,18 +37,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input
-        //1.1.1 handleInputText
-        onChange={handleInputText} 
-        type="text"
-        value={inputText}
-        />
-        {/* 2.1.1 handleItems */}
-        <button onClick={handleItems}>
-          <span>Add</span>
-        </button>
-      </div>
+      <InputArea />
       <div>
         <ul>
         {/*3.1. además usamos el index para darle la key al list item, ya que todos los itmes tienen que tener una key, en este caso lo hacemos igual al index aunque no es conveniente, deberíamos crear un campo especial para esto, podemos usar el paquete uuid por ejemplo. Luego en el componente "ToDoItems,jsx", en el punto 3.1, accedemos a este componente que lo contiene, a travez de la propiedad id para desde una jerarquía mas abajo, activar la función de delete.*/}
